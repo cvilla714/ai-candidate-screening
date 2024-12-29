@@ -1,0 +1,23 @@
+# Node modules (Frontend)
+frontend/node_modules/
+
+# Environment files (Backend)
+backend/conf/.env
+
+# Python caches
+*.pyc
+__pycache__/
+
+# Poetry virtualenvs (if created in the project folder)
+.venv/
+
+# Docker-related files
+*.log
+*.pid
+
+# VSCode settings
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
