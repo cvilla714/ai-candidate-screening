@@ -15,6 +15,11 @@ class Settings(BaseSettings):
     app_name: str = "Candidate Screening API"
     api_version: str = "v1"
     environment: str = os.getenv("ENV", "local")
+    db_hostname: str = "db"
+    db_name: str = "candidates_db"
+    db_password: str = "password"
+    db_port: int = 5432
+    db_username: str = "user"
 
     # Database settings
     sqlalchemy_database_uri: str = (
