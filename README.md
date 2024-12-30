@@ -14,7 +14,7 @@ This project is an AI-powered application for screening and scoring candidates b
 
 - **Backend**: FastAPI, Python
 - **Frontend**: React
-- **Database**: PostgreSQL (RDS)
+- **Database**: PostgreSQL
 - **Machine Learning**: Scikit-learn
 - **Deployment**: Docker
 
@@ -23,7 +23,7 @@ This project is an AI-powered application for screening and scoring candidates b
 ### Prerequisites
 
 - Docker and Docker Compose installed on your local machine.
-- PostgreSQL database (can be hosted locally or on a cloud platform like AWS RDS).
+- PostgreSQL database.
 
 ### Clone the Repository
 
@@ -34,7 +34,7 @@ cd python_challenge
 
 ### Environment Variables
 
-Create a `.env` file in the `backend` directory with the following content:
+Create a `.env` file in the `conf` directory part of `backend` folder with the following content:
 
 ```env
 DB_HOST=db
@@ -72,6 +72,7 @@ DB_PORT=5432
 ### Test the Application
 
 1. Use Postman or any API testing tool to interact with the API endpoints:
+
    - `/api/upload-description/`: Upload a job description PDF.
    - `/api/score-candidates/`: Get the top candidates for a given job description.
 
@@ -89,6 +90,8 @@ python_challenge/
 │   │   ├── utils/             # Utility scripts
 │   │   ├── main.py            # FastAPI application
 │   │   └── config.py          # Configuration settings
+│   ├── conf/                  # Configuration folder
+|   |   └── .env               # Environment variables
 │   ├── Dockerfile             # Dockerfile for backend
 │   ├── requirements.txt       # Python dependencies
 │   └── seed_database.py       # Script to seed database
@@ -106,22 +109,27 @@ python_challenge/
 ## Challenges Faced
 
 1. **Docker Configuration**:
+
    - Created separate Dockerfiles for backend and frontend.
    - Configured `docker-compose.yml` for multi-container setup.
 
 2. **Database Integration**:
+
    - Integrated PostgreSQL and used Alembic for database migrations.
    - Addressed issues with environment variables and connection strings.
 
 3. **Data Cleaning and Preprocessing**:
+
    - Developed a script to clean and preprocess candidate data.
    - Converted Excel data to CSV format and calculated total experience.
 
 4. **Machine Learning Model**:
+
    - Trained a Random Forest model for candidate scoring.
    - Saved the model and vectorizer as `.joblib` files.
 
 5. **Frontend-Backend Integration**:
+
    - Implemented CORS middleware to enable frontend-backend communication.
    - Added React components for uploading job descriptions and displaying results.
 
