@@ -3,7 +3,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - '3000:3000'
+      - '3001:3000'
     volumes:
       - ./frontend:/myapp
 
@@ -11,7 +11,7 @@ services:
     build:
       context: ./backend
     ports:
-      - '8000:8000'
+      - '8001:8000'
     volumes:
       - ./backend:/myapp
     depends_on:
