@@ -11,7 +11,7 @@ function App() {
     formData.append('file', file);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/upload-description/', formData);
+      const response = await axios.post('http://54.85.19.50:8001/api/upload-description/', formData);
       setDescription(response.data.description); // Set the extracted description in the textarea
       console.log('Job description uploaded successfully:', response.data);
     } catch (error) {
@@ -23,7 +23,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/api/score-candidates/', {
+      const response = await axios.post('http://54.85.19.50:8001/api/score-candidates/', {
         description,
       });
       setCandidates(response.data.top_candidates);

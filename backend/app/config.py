@@ -37,6 +37,7 @@ class Settings(BaseSettings):
     # CORS settings
     cors_origins: list = [
         "http://localhost:3000",
+        "http://54.85.19.50:3001",  # Add the public IP with port
     ]
     cors_methods: list = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     cors_allow_headers: list = [
